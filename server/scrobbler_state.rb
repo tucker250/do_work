@@ -15,3 +15,20 @@ def respond (*params)
 
 	print JSON.generate(hash_array)
 end
+
+
+def latest_version
+	# performs check for latest version of scrobbeler file
+	# may be stored in text file, database, or a call to the file stored in a specific folder, such as "/latest/scrobbler.rb" -v
+	3.5
+end
+
+def latest_url
+	# returns the server url path to the update patch file
+	"http://pos.swipely.com/latest/scrobbler.#{self.latest_version}.zip"
+end
+
+def time_of_next_update
+	# 5 minutes from now
+	Time.now + 60*5
+end
